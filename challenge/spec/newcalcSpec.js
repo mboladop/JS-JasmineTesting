@@ -39,5 +39,39 @@ describe("Extra calculator functions", function() {
             expect(cubeMe(3)).toBe(27);
         });
     });
+    
+    describe("Triangle area function", function(){
+        it ("should return 5 for the area of a triangle with base 5 and height 2", function(){
+            expect(areaOfTriangle(5, 2)).toBe(5);
+        });
+        
+        it ("should alert that no negative values are acceptable", function() {
+            spyOn(window, "alert");
+            areaOfTriangle(-5, 2);
+            expect(window.alert).toHaveBeenCalledWith("no negative values are acceptable");
+        });
+    });
+    
+    describe("Year calculator function", function(){
+        
+        it("should calculate that fron 2016 there are 2 years left till 2018", function(){
+            expect(yearCalculator(2016)).toBe(2);
+        });
+        
+        it("should alert no numbers above 2018 and below 1700 are viable", function(){
+            spyOn(window, "alert");
+            yearCalculator(2019);
+            expect(window.alert).toHaveBeenCalledWith("no numbers above 2018 and below 1700 are viable");
+        })
+    });
+    
+ 
+    describe("Area of a Cylinder function", function(){
+       
+        it("should return an area of 100.53 for a radius of 2 and a height of 6", function(){
+         expect(areaOfCylinder(2, 6)).toBe(100.53096491487338);   
+        });
+    });
 
+     
 });
